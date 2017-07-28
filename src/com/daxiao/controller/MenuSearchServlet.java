@@ -2,6 +2,7 @@ package com.daxiao.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,10 +84,12 @@ public class MenuSearchServlet extends HttpServlet {
     	/*
 		 *  对客户端请求重新编码，防止中文乱码
 		 */  	
-    	request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
+    	//request.setCharacterEncoding("utf-8");
+    	//new String(request.getParameter("username").getBytes("ISO-8859-1"),"utf-8");
     	
-    	String username = new String(request.getParameter("username").getBytes("ISO-8859-1"),"utf-8");
+    	String username = request.getParameter("username");
+    	URLDecoder.decode(username, "UTF-8"); 
+    	
     	System.out.println("*****username:"+username);
     	MessageSearchBean msb = new MessageSearchBean();
         msb.setUsername_equ(username);
