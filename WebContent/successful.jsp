@@ -58,7 +58,7 @@
     <body>    	
 		<div class="container">
 			<!-- header -->
-			<div class="text-center ">
+			<div class="text-center col-xs-12">
 				
 					<img alt=""  class="img-responsive center-block" src="./resource/images/successful1.png">
 			</div>
@@ -92,7 +92,7 @@
 		<!-- footer -->
 		<div class="text-center col-xs-12 footer">
 				<hr>
-			   	<span>温馨提示：本页面将在</span><span id="time">10</span><span>秒后自动返回</span><br/>
+			   	<span>温馨提示：本页面将在</span><span id="time"></span><span>秒后自动返回</span><br/>
 				<a href="./index.html">返回首页</a>
 		</div>
     </body>
@@ -100,8 +100,8 @@
     <script type="text/javascript" src="./resource/bootstrap/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="./resource/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    	var i=10;
-    	
+    	var i=60;
+    	document.getElementById("time").innerHTML=i;
     	function changeTime()
     	{
     		i--;
